@@ -34,7 +34,11 @@ export class LeadsService {
         id: response.data._embedded.leads[0].id,
       };
     } catch (error) {
-      throw new HttpException(error, 500);
+      if (error.status) {
+        throw new HttpException(error.message, error.status);
+      } else {
+        throw new HttpException('Внутренняя ошибка сервера', 500);
+      }
     }
   }
 }

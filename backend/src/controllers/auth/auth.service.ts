@@ -17,7 +17,11 @@ export class AuthService {
       return response.data;
     }
     catch (error) {
-      throw new HttpException(error, 500);
+      if (error.status) {
+        throw new HttpException(error.message, error.status);
+      } else {
+        throw new HttpException('Внутренняя ошибка сервера', 500);
+      }
     }
   }
 }
