@@ -4,8 +4,8 @@
 
 <style>
 .spinner {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   border: 2px solid #fff;
   animation: spinner-bulqg1 0.8s infinite linear alternate,

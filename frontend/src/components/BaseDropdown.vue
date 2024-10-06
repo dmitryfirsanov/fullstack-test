@@ -35,7 +35,10 @@ const onClick = (newValue: string) => {
         alt="dropdown arrow"
       />
     </div>
-    <ul v-if="isOpen" class="dropdown__items">
+    <ul
+      v-if="isOpen"
+      class="dropdown__items"
+    >
       <li
         v-for="(item, index) in items"
         :key="index"
@@ -45,7 +48,12 @@ const onClick = (newValue: string) => {
         ]"
         @click="onClick(item)"
       >
-        <img v-if="item === currentValue" class="dropdown__item-checkmark" src="../assets/svg/check.svg" alt="check" />
+        <img
+          v-if="item === currentValue"
+          class="dropdown__item-checkmark"
+          src="../assets/svg/check.svg"
+          alt="check"
+        />
         {{ item }}
       </li>
     </ul>
@@ -54,12 +62,13 @@ const onClick = (newValue: string) => {
 
 <style>
 .dropdown {
+  position: relative;
   font-size: 16px;
+  width: 250px;
 }
 
 .dropdown__selected {
   position: relative;
-  width: 250px;
   cursor: pointer;
   padding: 8px 24px;
   box-sizing: border-box;
@@ -82,10 +91,15 @@ const onClick = (newValue: string) => {
 }
 
 .dropdown__items {
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  left: 0;
   width: 270px;
   list-style-type: none;
   margin-top: 10px;
   padding: 0;
+  background: #fff;
   border: 1px solid #d6d9dd;
   border-radius: 4px;
 }

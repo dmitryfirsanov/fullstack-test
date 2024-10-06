@@ -29,10 +29,10 @@ defineProps<{
   background: #4c8bf7;
   font-size: 14px;
   font-weight: 600;
-  border: 1px solid transparent;
   padding: 8px 12px;
   box-sizing: border-box;
   color: #fff;
+  border: 1px solid transparent;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s;
